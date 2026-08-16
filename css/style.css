@@ -1,0 +1,263 @@
+/* Katela Kernel — styled after the visual language of archlinux.org */
+
+:root {
+  --katela-blue: #1793d1;
+  --katela-blue-dark: #0f4e6e;
+  --katela-dark: #222629;
+  --katela-darker: #101214;
+  --text-body: #333;
+  --text-muted: #666;
+  --border-grey: #d9dbdd;
+  --bg-body: #ffffff;
+  --bg-box: #f5f6f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Liberation Sans", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-body);
+  background: var(--bg-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--katela-blue-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top bar */
+#topbar {
+  background: var(--katela-darker);
+  color: #9aa0a6;
+  font-size: 12px;
+}
+
+#topbar .wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.topbar-text {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #808790;
+}
+
+/* Header */
+#site-header {
+  background: var(--katela-dark);
+  border-bottom: 3px solid var(--katela-blue);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
+#logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+#main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+#main-nav a {
+  color: #d5d8db;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+#main-nav a:hover {
+  color: #ffffff;
+  border-bottom-color: var(--katela-blue);
+  text-decoration: none;
+}
+
+/* Tagline strip */
+#tagline {
+  background: var(--katela-blue);
+}
+
+#tagline p {
+  margin: 0;
+  padding: 10px 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+/* Content layout */
+.content-columns {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding-top: 28px;
+  padding-bottom: 40px;
+}
+
+.main-column {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.side-column {
+  flex: 0 0 260px;
+}
+
+.box {
+  background: var(--bg-box);
+  border: 1px solid var(--border-grey);
+  border-radius: 3px;
+  padding: 20px 22px;
+  margin-bottom: 22px;
+}
+
+.box h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 19px;
+  color: var(--katela-blue-dark);
+  border-bottom: 2px solid var(--katela-blue);
+  padding-bottom: 8px;
+}
+
+.box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: var(--katela-blue-dark);
+  border-bottom: 1px solid var(--border-grey);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.box p {
+  margin: 0 0 12px 0;
+  color: var(--text-body);
+}
+
+.box p:last-child {
+  margin-bottom: 0;
+}
+
+.news-entry p {
+  margin-bottom: 14px;
+}
+
+.side-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-grey);
+  font-size: 14px;
+}
+
+.side-list li:last-child {
+  border-bottom: none;
+}
+
+.side-list.plain li {
+  color: var(--text-muted);
+}
+
+.side-note {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Footer */
+#site-footer {
+  background: var(--katela-dark);
+  color: #9aa0a6;
+  font-size: 13px;
+}
+
+#site-footer .wrap {
+  padding: 18px 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .content-columns {
+    flex-direction: column;
+  }
+
+  .side-column {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .header-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #main-nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
